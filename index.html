@@ -152,7 +152,7 @@
             }
             .sec-header {
                 text-align: center;
-                margin-bottom: var(--space-16);
+                margin-bottom: var(--space-12);
             }
             .sec-header .sec-desc {
                 margin: 0 auto;
@@ -442,25 +442,57 @@
                 border-radius: var(--radius-lg);
                 padding: var(--space-12);
                 text-align: center;
-                max-width: 640px;
+                max-width: 900px;
                 margin: 0 auto;
             }
-            .badges {
+            .pricing-cards {
                 display: flex;
-                gap: var(--space-2);
-                justify-content: center;
                 flex-wrap: wrap;
-                margin: var(--space-6) 0 var(--space-5);
+                justify-content: center;
+                gap: var(--space-4);
+                margin-bottom: var(--space-8);
+                max-width: 660px;
+                margin-left: auto;
+                margin-right: auto;
             }
-            .badge {
-                font-family: var(--font-mono);
-                font-size: 11px;
-                font-weight: 500;
-                padding: 6px 14px;
-                border-radius: var(--radius-full);
+            .pricing-card {
+                flex: 0 0 200px;
+                background: rgba(255, 255, 255, 0.03);
                 border: 1px solid var(--color-border);
+                border-radius: var(--radius-md);
+                padding: var(--space-6);
+                text-align: center;
+                transition: border-color var(--transition);
+            }
+            .pricing-card:hover {
+                border-color: var(--color-accent);
+            }
+            .pricing-card h3 {
+                font-family: var(--font-mono);
+                font-size: 16px;
+                font-weight: 600;
+                color: #e2e8f0;
+                margin-bottom: var(--space-2);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            .pricing-card .price {
+                font-size: 18px;
+                font-weight: 500;
+                color: var(--color-accent);
+                margin-bottom: var(--space-3);
+            }
+            .pricing-card .pricing-desc {
+                font-size: 13px;
                 color: #94a3b8;
-                background: rgba(0, 0, 0, 0.2);
+                line-height: 1.5;
+                margin-bottom: var(--space-4);
+                min-height: 40px;
+            }
+            .pricing-card .btn {
+                width: 100%;
+                font-size: 13px;
+                padding: 8px 16px;
             }
             .bonus {
                 display: inline-flex;
@@ -491,7 +523,7 @@
                 font-size: 14px;
             }
             .bonus span {
-                color: #cbd5e1;
+                color: #94a3b8;
                 font-size: 14px;
                 line-height: 1.6;
             }
@@ -547,9 +579,10 @@
             <div class="container">
                 <h1><span>Spec Editor</span></h1>
                 <p>
-                    AI-powered requirements engineering with methodology
-                    support. Multi-agent debate produces structured
-                    specifications — connected graphs, not flat lists.
+                    Active Memory Layer for Requirements &amp; Code. AI agents
+                    debate, cross-reference, and evolve your project knowledge —
+                    structured specs, interactive diagrams, and a VS Code
+                    extension with zero configuration.
                 </p>
                 <div class="hero-actions">
                     <a
@@ -593,11 +626,11 @@
             <div class="container">
                 <div class="sec-header">
                     <p class="sec-label">Why Spec Editor</p>
-                    <h2 class="sec-title">Beyond a single LLM prompt</h2>
+                    <h2 class="sec-title">Active Memory Layer for AI-driven development</h2>
                     <p class="sec-desc">
-                        Raw LLMs produce superficial bullet points. Spec Editor
-                        orchestrates multi-agent debate to build deeply
-                        connected, structured specifications.
+                        Unlike passive docs, this memory is alive. AI agents continuously
+                        debate, cross-reference, and evolve the project knowledge — turning
+                        requirements into a structured, version-controlled knowledge base.
                     </p>
                 </div>
                 <div class="features">
@@ -652,8 +685,9 @@
                         <p>
                             Not a flat list. Modules, scenarios, entities, UI,
                             metrics — all connected with typed relationships.
-                            Waterfall by default. More methodologies available
-                            as packs.
+                            Define your own aspects and relationships in YAML.
+                            Waterfall, Agile, API-first — swap methodology
+                            without rewriting your spec.
                         </p>
                     </div>
                     <div class="card">
@@ -682,6 +716,90 @@
                             requirements.
                         </p>
                     </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="2"
+                                    y="3"
+                                    width="20"
+                                    height="14"
+                                    rx="2"
+                                />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3>VS Code Extension</h3>
+                        <p>
+                            Browse your spec in a tree view, generate Mermaid
+                            diagrams (ER, Class, Flowchart, Sankey — 8 types),
+                            edit elements with live preview. Available on the
+                            VS Code Marketplace. Prototypes exist for JetBrains
+                            and Zed — ready for community contributors to
+                            finish and polish.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="11" cy="11" r="8" />
+                                <line
+                                    x1="21"
+                                    y1="21"
+                                    x2="16.65"
+                                    y2="16.65"
+                                />
+                            </svg>
+                        </div>
+                        <h3>Export &amp; Semantic Search</h3>
+                        <p>
+                            Export to SRS (IEEE&nbsp;830), HTML, OpenAPI&nbsp;3.0,
+                            Jira CSV, or Compliance XLSX. Semantic code search
+                            finds functions by meaning, not just by name — your
+                            AI agent understands the codebase without reading
+                            every file.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════ SCREENSHOT ════════ -->
+        <section class="section">
+            <div class="container">
+                <div class="sec-header">
+                    <p class="sec-label">See it in action</p>
+                    <h2 class="sec-title">Interactive diagrams in VS Code</h2>
+                    <p class="sec-desc">
+                        Browse your specification in a tree view, switch between
+                        ER, Class, Flowchart, Sankey, and 5 more diagram types.
+                        Click any node to drill down into connected elements.
+                    </p>
+                </div>
+                <div class="demo-wrap" style="max-width: 860px">
+                    <div class="demo-bar">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <img
+                        src="screenshot.png"
+                        alt="Spec Editor VS Code extension with Mermaid ER diagram and element tree"
+                        loading="lazy"
+                    />
                 </div>
             </div>
         </section>
@@ -706,8 +824,9 @@
                             source/auth.md</code
                         >
                         <p>
-                            Drop Markdown, TXT, or chat logs into source/. The
-                            pipeline extracts and classifies requirements.
+                            Drop Markdown, TXT, PDF, or chat logs into
+                            <code>source/</code>. The pipeline extracts and
+                            classifies requirements.
                         </p>
                     </div>
                     <div class="step">
@@ -716,17 +835,19 @@
                         <code>spec-editor run</code>
                         <p>
                             Multi-agent debate produces a structured
-                            specification in aspects/ — 8 aspects, typed
-                            relationships.
+                            specification with typed relationships — 8 aspects
+                            in the default waterfall methodology.
                         </p>
                     </div>
                     <div class="step">
                         <span class="step-num">3</span>
-                        <h4>Connect your coding agent</h4>
+                        <h4>Explore &amp; connect</h4>
                         <code>spec-editor mcp &amp;</code>
                         <p>
-                            Start the MCP server. One JSON config block — Claude
-                            Code, Cursor, or Zed reads your spec.
+                            Start the MCP server, then install the
+                            <strong>VS Code extension</strong> for interactive
+                            diagrams and tree view. Or connect Claude Code,
+                            Cursor, or Zed directly via MCP.
                         </p>
                     </div>
                 </div>
@@ -741,8 +862,9 @@
                     <h2 class="sec-title">Free for everyone</h2>
                     <p class="sec-desc">
                         The core engine is free and open source — Apache 2.0.
-                        Generate specs, run agents, connect to your AI coding
-                        assistant via MCP.
+                        Multi-agent debate, structured specs, interactive
+                        diagrams, VS Code extension, MCP server, and 6 export
+                        formats — all included at no cost.
                     </p>
                 </div>
                 <div style="text-align: center">
@@ -766,62 +888,26 @@
             </div>
         </section>
 
-        <!-- ════════ SUPPORT ════ -->
+        <!-- ════════ METHODOLOGY ════════ -->
         <section class="section section-alt">
             <div class="container">
                 <div class="sec-header">
-                    <p class="sec-label">Optional — support development</p>
-                    <h2 class="sec-title">Methodology Packs</h2>
+                    <p class="sec-label">Customizable</p>
+                    <h2 class="sec-title">Your methodology, your rules</h2>
                     <p class="sec-desc" style="font-size: 15px">
-                        Buy a methodology pack to support ongoing development.
-                        Not required — the waterfall methodology is free and
-                        complete.
+                        Methodology is defined in a single
+                        <code>methodology.yaml</code> file. Choose from built-in
+                        templates (waterfall, agile,&nbsp;api-first) or define
+                        your own aspects, element types, and relationships.
+                        Swap methodologies without rewriting your specification.
                     </p>
                 </div>
-                <div class="pricing">
-                    <div class="badges">
-                        <span class="badge">Agile / Scrum</span>
-                        <span class="badge">Kanban</span>
-                        <span class="badge">API-first</span>
-                        <span class="badge">Regulatory</span>
-                    </div>
-                    <p
-                        style="
-                            color: #94a3b8;
-                            font-size: 14px;
-                            margin-bottom: var(--space-8);
-                        "
-                    >
-                        Backlog-driven sprints · OpenAPI contracts · GDPR / SOC2
-                        / HIPAA
-                    </p>
-                    <div class="bonus">
-                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                        </svg>
-                        <div>
-                            <strong>Early supporter bonus</strong>
-                            <span
-                                >All supporters will get access to Spec
-                                Visualizer — interactive requirement diagrams
-                                (beta, coming soon).</span
-                            >
-                        </div>
-                    </div>
-                    <a class="btn btn-primary" style="cursor: default"
-                        >Coming tomorrow — check back</a
-                    >
-                    <p
-                        style="
-                            margin-top: var(--space-5);
-                            color: #64748b;
-                            font-size: 13px;
-                            font-style: italic;
-                        "
-                    >
-                        Supporting indie developers is conscious consumption.
-                        Live and build consciously.
-                    </p>
+                <div style="text-align: center">
+                    <a
+                        href="https://github.com/spec-editor/spec-editor#what-is-spec-editor"
+                        class="btn btn-secondary"
+                        style="font-size: 14px"
+                    >Read the docs →</a>
                 </div>
             </div>
         </section>
